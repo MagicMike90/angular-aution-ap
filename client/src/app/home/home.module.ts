@@ -8,7 +8,6 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { CategoriesComponent } from './categories/categories.component';
 const routes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'categories' },
-  { path: 'search', component: SearchComponent },
   {
     path: 'categories',
     children: [
