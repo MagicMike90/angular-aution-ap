@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
 import { Product, ProductService } from '../../shared/services';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-categories',
@@ -10,8 +11,19 @@ import { Product, ProductService } from '../../shared/services';
   styleUrls: ['./categories.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CategoriesComponent implements OnInit {
-  constructor() {}
+export class CategoriesComponent {
+  readonly categories$: Observable<string[]>;
+  readonly products$: Observable<Product[]>;
 
-  ngOnInit() {}
+  constructor(private productService: ProductService, private route: ActivatedRoute) {
+    this.categories$ = this.productService.getAllCategories().pipe(map(categories => ['all', ...categories]));
+
+    this.products$ = this.route.params.pipe(switchMap(({ category }) => this.getCategory(category)));
+  }
+
+  private getCategory(category: string): Observable<Product[]> {
+    return category.toLowerCase() === 'all'
+      ? this.productService.getAll()
+      : this.productService.getByCategory(category.toLowerCase());
+  }
 }
