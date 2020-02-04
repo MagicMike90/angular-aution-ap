@@ -1,4 +1,9 @@
 <mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-search-form (search)="sidenav.close()"></app-search-form>
+  </mat-sidenav>
+
+
   <mat-toolbar class="toolbar">
     <button mat-icon-button id="search"
             class="toolbar__icon-button"

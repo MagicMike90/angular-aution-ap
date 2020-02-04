@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
+import { SearchFormModule } from './shared/components/search-form';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,7 +25,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     MatIconModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    SearchFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]
