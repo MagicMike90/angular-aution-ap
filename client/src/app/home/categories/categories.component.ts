@@ -1,4 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
+
+import { Product, ProductService } from '../../shared/services';
 
 @Component({
   selector: 'app-categories',
