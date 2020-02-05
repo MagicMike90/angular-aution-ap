@@ -9,6 +9,11 @@
       [product]="product">
   </app-product-detail>
 
-
+  <app-product-suggestion
+      fxFlex="auto"
+      fxFlex.gt-md="35%"
+      *ngIf="suggestedProducts$ | async as products"
+      [products]="products">
+  </app-product-suggestion>
 
 </div>

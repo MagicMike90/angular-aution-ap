@@ -12,6 +12,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
 })
 export class ProductComponent {
   readonly product$: Observable<Product>;
+  readonly suggestedProducts$: Observable<Product[]>;
 
   constructor(private route: ActivatedRoute, private productService: ProductService) {
     this.product$ = this.route.paramMap.pipe(
@@ -19,5 +20,7 @@ export class ProductComponent {
       filter(productId => Boolean(productId)),
       switchMap(productId => this.productService.getById(productId))
     );
+
+    this.suggestedProducts$ = this.productService.getAll();
   }
 }
