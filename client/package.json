@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "server": "json-server ./mock-server/db/index.js --port 9090  --routes ./mock-server/routes.json"
+    "server": "json-server ./mock-server/db/index.js --port 9090  --routes ./mock-server/routes.json --static ./mock-server/db/img --watch"
   },
   "private": true,
   "dependencies": {

@@ -6,6 +6,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 
 import { CategoriesComponent } from './categories/categories.component';
+import { ProductGridComponent } from './product-grid/product-grid.component';
 const routes: Route[] = [
   { path: '', pathMatch: 'full', redirectTo: 'categories' },
   {
@@ -19,6 +20,6 @@ const routes: Route[] = [
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(routes), FlexLayoutModule, MatGridListModule, MatTabsModule],
-  declarations: [CategoriesComponent]
+  declarations: [CategoriesComponent, ProductGridComponent]
 })
 export class HomeModule {}
