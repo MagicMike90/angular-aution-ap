@@ -45,7 +45,7 @@
 
 .tile__title {
   color: mat-color($nga-foreground, text);
-  font-family: 'Abril Fatface', cursive;
+  font-weight: 500;
   font-size: mat-font-size($nga-typography, headline);
   line-height: mat-line-height($nga-typography, headline);
 }
